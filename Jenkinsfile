@@ -19,7 +19,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    sh 'sudo docker build -t $IMAGE_NAME:$IMAGE_TAG .'
+                    sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
                 }
             }
         }
@@ -28,8 +28,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub-creds', usernameVariable: 'DOCKER_USER', passwordVariable: 'DOCKER_PASS')]) {
             sh '''
                 echo $DOCKER_PASS | docker login -u $DOCKER_USER --password-stdin
-                sudo docker tag $IMAGE_NAME:$IMAGE_TAG $DOCKER_USER/$IMAGE_NAME:$IMAGE_TAG
-                sudo docker push $DOCKER_USER/$IMAGE_NAME:$IMAGE_TAG
+                 docker tag $IMAGE_NAME:$IMAGE_TAG $DOCKER_USER/$IMAGE_NAME:$IMAGE_TAG
+                 docker push $DOCKER_USER/$IMAGE_NAME:$IMAGE_TAG
             '''
           }
       }
@@ -40,8 +40,8 @@ pipeline {
             steps {
                 script {
                     sh '''
-                        sudo docker stop $CONTAINER_NAME || true
-                        sudo docker rm $CONTAINER_NAME || true
+                         docker stop $CONTAINER_NAME || true
+                         docker rm $CONTAINER_NAME || true
                     '''
                 }
             }
@@ -49,7 +49,7 @@ pipeline {
 
         stage('Run Docker Container') {
             steps {
-                sh 'sudo docker run -d --name $CONTAINER_NAME -p 3000:3000 $IMAGE_NAME:$IMAGE_TAG'
+                sh ' docker run -d --name $CONTAINER_NAME -p 3000:3000 $IMAGE_NAME:$IMAGE_TAG'
             }
         }
     }
