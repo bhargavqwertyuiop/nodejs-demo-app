@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'bhargavqwertyuiop/nodejs-demo-app'
+        IMAGE_NAME = 'nodejs-demo-app'
         IMAGE_TAG = '1.0.0'
         CONTAINER_NAME = 'simple-nodejs-app'
         DOCKER_USER = 'bhargavqwertyuiop'
