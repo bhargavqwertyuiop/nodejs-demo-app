@@ -2,7 +2,7 @@
 
 This project demonstrates a minimal Node.js API built with Express, and is containerized using Docker.
 
-## Prerequisites
+## Prerequisites 
 
 - Docker installed on your machine.
   - Download from https://www.docker.com/get-started
