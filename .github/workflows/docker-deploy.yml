@@ -27,4 +27,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/simple-nodejs-project:latest
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/nodejs-demo-app:latest
