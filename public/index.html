@@ -8,17 +8,26 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to the Simple Node.js Website!</h1>
+    <h1>🌟 Welcome to the Simple Node.js Website!</h1>
+    <nav>
+      <a href="#greet">Greet</a>
+      <a href="#about">About</a>
+    </nav>
   </header>
   <main>
-    <section class="greet-section">
+    <section id="greet" class="greet-section">
+      <h2>Interactive Greeting</h2>
       <input id="nameInput" type="text" placeholder="Enter your name" />
       <button id="greetBtn">Greet Me</button>
       <p id="greetMsg"></p>
     </section>
+    <section id="about" class="info-section">
+      <h2>About This Project</h2>
+      <p>This is a Node.js web application built with Express. It includes modern front-end styling, an API for greetings, and is deployed using Docker with Jenkins and GitHub Actions CI/CD automation.</p>
+    </section>
   </main>
   <footer>
-    <p>&copy; 2025 Simple Node.js Project</p>
+    <p>&copy; 2025 Simple Node.js Project | Built with ❤️</p>
   </footer>
   <script src="/js/app.js"></script>
 </body>
