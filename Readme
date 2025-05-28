@@ -35,9 +35,9 @@ docker ps
    
 
 3. Test the API:
-curl http://localhost or ipAddress-of-jenkins-server:3000/
-curl http://localhost or ipAddress-of-jenkins-server:3000/greet
-curl http://localhost or ipAddress-of-jenkins-server:3000/greet/Bhargav
+curl http://localhost or ipAddress-of-jenkins-server:3000/#greet
+curl http://localhost or ipAddress-of-jenkins-server:3000/#about
+
 
 4. Jenkins Pipeline:
   Then written a pipeline code to automate the build and deploy of latest docker image into the DockerHub,
