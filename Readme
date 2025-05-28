@@ -15,7 +15,7 @@ docker --version
 ## Build Docker Image
 
 1. In the project root, build the Docker image:
-  docker build -t simple-nodejs-project:1.0.0 .
+  docker build -t simple-nodejs-project:latest .
    
 
 2. List images to confirm:
@@ -28,7 +28,7 @@ docker --version
 docker run -d \
   --name simple-nodejs-app \
   -p 3000:3000 \
-  simple-nodejs-project:1.0.0
+  simple-nodejs-project:latest
 
 2. Verify container is running:
 docker ps
