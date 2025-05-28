@@ -1,32 +1,20 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-// Import routes
+// Serve static website
+app.use(express.static(path.join(__dirname, 'public')));
+
+// API routes
 const greetRouter = require('./routes/greet');
-
-// Middleware to parse JSON bodies
-app.use(express.json());
-
-// Routes
 app.use('/greet', greetRouter);
 
-// Root route
-app.get('/', (req, res) => {
-  res.send('Welcome to the Simple Node.js Project!');
-});
-
-// 404 handler
-app.use((req, res) => {
-  res.status(404).json({ error: 'Not Found' });
-});
-
-// Error handler
-app.use((err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).json({ error: 'Something went wrong!' });
+// Fallback to index.html for SPA behavior
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on http://localhost:${port}`);
+  console.log(`Server is running at http://localhost:${port}`);
 });
