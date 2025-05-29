@@ -39,7 +39,7 @@ curl http://localhost or ipAddress-of-jenkins-server:3000/#greet
 curl http://localhost or ipAddress-of-jenkins-server:3000/#about
 
 
-4. Jenkins Pipeline:
+## Jenkins Pipeline:
   Then written a pipeline code to automate the build and deploy of latest docker image into the DockerHub,
   And running the Docker Container from the Image.
   1. Checkout code
@@ -49,7 +49,7 @@ curl http://localhost or ipAddress-of-jenkins-server:3000/#about
   5. Stop and Remove any existing containers
   6. Run Docker Image as Container
 
-5. GitHub Actions
+ ## GitHub Actions
   When you push to `main`, the workflow will:
 
   1. Checkout code
