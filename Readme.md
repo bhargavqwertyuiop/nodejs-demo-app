@@ -1,4 +1,4 @@
-# Simple Node.js Project with Docker and Automated using CI/CD pipeline(Jenkins)
+# Simple Node.js Project with Docker and Automated using CI/CD pipeline(Jenkins & Github Actions)
 
 This project demonstrates a minimal Node.js API built with Express, and is containerized using Docker.
 
